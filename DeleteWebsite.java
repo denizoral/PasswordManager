@@ -3,12 +3,13 @@ import java.nio.file.*;
 public class DeleteWebsite {
     public DeleteWebsite(String website){
         try{
-            Files.deleteIfExists(Paths.get("/saved/" + website + ".txt"));
-            System.out.println("Operation complete!");
-        } catch (NoSuchFileException e) {
-            e.printStackTrace();
+            if(Files.deleteIfExists(Paths.get("/saved/" + website + ".txt"))){
+                System.out.println("Operation complete!");
+            } else {
+                System.out.println("Website not found.");
+            }
         } catch (IOException e){
-            System.out.println("This website does not exist.");
+            e.printStackTrace();
         }
     }
 }
