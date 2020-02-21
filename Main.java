@@ -8,7 +8,6 @@ public class Main {
     //Initialize variables
     static Strings str = new Strings();
     static Scanner scan = new Scanner(System.in);
-    static Scanner intScanner = new Scanner(System.in);
     static boolean run = true;
     static ReadWebsite read = new ReadWebsite();
     static String newTable;
@@ -25,7 +24,7 @@ public class Main {
     public static void runProgram(){
         while (run) {
             System.out.print(">> ");
-            String selection = intScanner.nextLine().toLowerCase();
+            String selection = scan.nextLine().toLowerCase();
             switch (selection) {
                 case "1":
                     System.out.print("Please enter website name: ");
